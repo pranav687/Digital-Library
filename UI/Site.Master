@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Book_Borrow.UI.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Book Borrow</title>
+    <link href="../Content/css/Site.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="../Content/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="../Content/css/dataTables.jqueryui.css" rel="stylesheet" />
+    <script src="../Content/js/jquery-3.4.1.js"></script>
+    <script src="../Content/js/jquery-ui-1.12.1.js"></script>
+    <script src="../Content/js/jquery.dataTables.js"></script>
+    <script src="../Content/js/jquery.validate.js"></script>
+    <script src="../Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="../Content/js/popper.js"></script>
+    <script src="../Content/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link href="../Content/newstyle/css/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!--NavBar-->
+        <nav class="navbar navbar-expand-lg  sticky-top abc">
+            <a href="#" class="navbar-brand">
+                <%-- <img src="../Images/books.png" height="30" />--%>
+               Book Borrow
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="HomePage.aspx" id="Home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="AboutUs.aspx" id="About" class="nav-link">About Us</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="DashboardLinkButton" runat="server" OnClick="DashboardLinkButton_Click">Dashboard</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="ViewBooksNavLinkButton" runat="server" OnClick="ViewBooksNavLinkButton_Click">View Books</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="UserLoginNavLinkButton" runat="server" OnClick="UserLoginNavLinkButton_Click">User Login</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="SignUpNavLinkButton" runat="server" OnClick="SignUpNavLinkButton_Click">Sign Up</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="LogoutNavLinkButton" runat="server" OnClick="LogoutNavLinkButton_Click">Logout</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="HelloUserNavLinkButton" runat="server" OnClick="HelloUserNavLinkButton_Click">Hello user</asp:LinkButton></li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="AdminLoginFooterLinkButton" runat="server" OnClick="AdminLoginFooterLinkButton_Click">Admin Login</asp:LinkButton></li>
+                </ul>
+            </div>
+        </nav>
+           <div class="body-content">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            <%--Footer--%>
+        <div class="foot d-flex flex-column">
+            <footer class="bg-white">
+                <div class="container py-5">
+                    <div class="row py-4">
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <img src="img/logo.png" alt="" width="180" class="mb-3">
+                            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            <ul class="list-inline mt-4">
+                                <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Feature</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="text-muted">Books</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Authors</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Clients</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Our Site</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-lg-0">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+                            <div class="p-1 rounded border">
+                                <div class="input-group">
+                                    <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                                    <div class="input-group-append">
+                                        <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyrights -->
+                <div class="bg-light py-4">
+                    <div class="container text-center">
+                        <p class="text-muted mb-0 py-2">© 2021 Book Borrow All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        </div>
+    </form>
+</body>
+</html>
