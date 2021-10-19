@@ -1,3 +1,3 @@
 # Book Borrow System
 
-[![Demo](/homeg.gif)]
+![Demo](/homeg.gif)
